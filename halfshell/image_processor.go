@@ -306,7 +306,7 @@ func (ip *imageProcessor) blur(image *Image, request *ImageProcessorOptions) err
 		return nil
 	}
 	blurRadius := float64(image.GetWidth()) * request.BlurRadius * ip.Config.MaxBlurRadiusPercentage
-	return image.Wand.GaussianBlurImage(blurRadius, blurRadius)
+	return image.Wand.BlurImage(blurRadius, blurRadius)
 }
 
 func aspectHeight(aspectRatio float64, width uint) uint {
